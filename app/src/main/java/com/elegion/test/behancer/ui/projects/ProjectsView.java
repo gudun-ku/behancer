@@ -11,7 +11,4 @@ public interface ProjectsView extends BaseView {
 
     void openProfileFragment(String username);
 
-    void showRefresh();
-
-    void hideRefresh();
 }

@@ -93,17 +93,9 @@ public class ProjectsFragment extends PresenterFragment<ProjectsPresenter>
     }
 
     @Override
-    public void onDetach() {
-        mStorage = null;
-        mRefreshOwner = null;
-        super.onDetach();
-    }
-
-    @Override
     public void onRefreshData() {
         mPresenter.getProjects();
     }
-
 
     @Override
     public void showRefresh() {
@@ -137,18 +129,15 @@ public class ProjectsFragment extends PresenterFragment<ProjectsPresenter>
     }
 
     @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
     public void showError() {
         mErrorView.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onDetach() {
+        mStorage = null;
+        mRefreshOwner = null;
+        super.onDetach();
     }
 }

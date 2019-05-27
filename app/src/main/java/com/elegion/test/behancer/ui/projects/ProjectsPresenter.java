@@ -41,6 +41,5 @@ public class ProjectsPresenter extends BasePresenter {
 
     public void openProfileFragment(String username) {
         mView.openProfileFragment(username);
-
     }
 }
