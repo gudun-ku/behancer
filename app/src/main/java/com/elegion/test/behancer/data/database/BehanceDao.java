@@ -37,6 +37,9 @@ public interface BehanceDao {
     @Query("select * from project")
     List<Project> getProjects();
 
+    @Query("select * from project join owner on owner.project_id = project.id where owner.username = :username")
+    List<Project> getUserProjects(String username);
+
     @Query("select * from cover where project_id = :projectId")
     Cover getCoverFromProject(int projectId);
 
